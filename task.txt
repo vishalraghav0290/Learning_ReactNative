@@ -1,0 +1,86 @@
+// --- React Native Learning Roadmap & Project Structure ---
+// This comment block contains a step-by-step learning path (basics -> advanced),
+// recommended tasks you can practice, and a suggested project folder structure.
+// Use this as a checklist while you build apps and improve your React Native skills.
+/*
+1) Basics (days 1-7)
+   - Environment: install Node, Expo CLI (recommended for beginners) or React Native CLI.
+   - Create a project: `expo init` or `npx react-native init`.
+   - Core components: View, Text, Image, TextInput, Button, ScrollView.
+   - Layout & styling: StyleSheet, Flexbox (flexDirection, justifyContent, alignItems), percentages and fixed sizes.
+   - State & lifecycle: useState, useEffect.
+   - Handling input: TextInput (controlled components using value + onChangeText).
+   - Lists: FlatList, keys, rendering items.
+   - Debugging: React Native Debugger, console.log, Expo dev tools.
+
+2) Intermediate (weeks 2-6)
+   - Navigation: React Navigation (stack, tabs, drawer). Practice nested navigators.
+   - Networking: fetch / axios, async/await, error handling.
+   - Local storage: AsyncStorage (or SecureStore), caching strategies.
+   - Forms & validation: Formik + Yup or react-hook-form.
+   - Styling systems: styled-components, Tailwind RN, theming.
+   - Platform differences: Platform module, StatusBar, SafeAreaView.
+   - Accessibility basics (accessibilityLabel, importantForAccessibility).
+
+3) Advanced (months 2+)
+   - Performance: useMemo, useCallback, React.memo, avoid unnecessary re-renders, optimize FlatList (getItemLayout, keyExtractor, initialNumToRender).
+   - Native modules: learn how bridges work, write a simple native module (Android/iOS) or use community modules.
+   - Animations: LayoutAnimation, Animated API, React Native Reanimated + gesture-handler.
+   - TypeScript: migrate a small app to TS, add types for props, navigation, redux, etc.
+   - State management at scale: Context + useReducer, Redux Toolkit, Zustand, or MobX.
+   - Testing: Jest unit tests, React Native Testing Library, E2E with Detox or Appium.
+   - CI/CD: Fastlane, EAS (Expo Application Services), PlayStore/AppStore deployment flow.
+
+4) Suggested practice projects (increasing complexity)
+   - Todo app (local only) with add/remove/edit and search (start here).
+   - Weather app (API + caching + error states + icons).
+   - Notes app with local DB (Realm or WatermelonDB) + sync idea.
+   - Chat app prototype (WebSocket or Pusher) + list performance + optimistic UI.
+   - E-commerce flow (product list, cart, checkout, payments integration).
+
+5) Learning workflow & tips
+   - Build small projects end-to-end and deploy at least one to a device.
+   - Read source code of popular RN libraries to learn patterns.
+   - Write tests for critical logic and components.
+   - Pair program or get code reviews.
+   - Keep a personal cheatsheet of commands, common patterns, and debugging recipes.
+
+6) Quick debugging tips (TextInput width issue you faced)
+   - If a TextInput width percentage doesn't work, ensure its parent has an explicit width.
+   - In a horizontal (row) layout, prefer using flex: give TextInput style: {flex: 1} and give the parent a width (e.g. width: '90%').
+   - Avoid CSS properties not supported by RN (e.g., gap isn't supported in many RN versions).
+   - Example (recommended):
+       <View style={{ flexDirection: 'row', width: '90%' }}>
+         <TextInput style={{ flex: 1, height: 40, borderWidth: 1 }} />
+         <Button title="Add" onPress={...} />
+       </View>
+
+7) Recommended file/folder structure for medium apps
+   - /src
+     - /components     -> reusable UI components (Button, Input, Card)
+     - /screens        -> screen components used by navigation
+     - /navigation     -> navigation containers and stacks
+     - /hooks          -> custom hooks (useAuth, useFetch)
+     - /services       -> API calls, client setup
+     - /store          -> redux or context providers
+     - /utils          -> helper functions
+     - /assets         -> images, fonts
+     - /types          -> TypeScript types (if using TS)
+   - App.js (or index.js) bootstraps navigation/providers
+
+8) Practical checklist (do these in order)
+   - [ ] Setup project with Expo and run on device (Expo Go).
+   - [ ] Build the Todo app from scratch (this file is a good start).
+   - [ ] Replace inline styles with StyleSheet and extract Input/TaskItem components.
+   - [ ] Add persistent storage (AsyncStorage) so tasks survive reload.
+   - [ ] Convert to FlatList for tasks and optimize keys.
+   - [ ] Add navigation and another screen (Task Details).
+   - [ ] Add tests for the task adding logic.
+   - [ ] Migrate to TypeScript (optional but highly recommended).
+
+Extras: some resources
+   - Official docs: https://reactnative.dev/
+   - React Navigation docs: https://reactnavigation.org/
+   - Expo docs: https://docs.expo.dev/
+   - React Native Testing Library: https://testing-library.com/docs/react-native-testing-library/ 
+*/
